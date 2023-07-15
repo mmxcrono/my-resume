@@ -1,0 +1,59 @@
+@import './reset';
+@import './mixins';
+
+:root {
+  --clr-neutral-100: hsl(0 0% 100% / 1);
+  --clr-primary-800: hsl(229 47% 17% / 1);
+  --clr-primary-700: hsl(229 43% 20% / 1);
+  --clr-primary-400: hsl(230 50% 58% / 0.3);
+  --clr-primary-300: hsl(229 36% 39% / 1);
+  --clr-primary-200: hsl(229 21% 53% / 1);
+  --clr-accent-400: hsl(147 93% 43% / 1);
+  --clr-secondary-400: hsl(229 78% 60% / 1);
+
+  --ff-base: 'Outfit', sans-serif;
+
+  --fw-regular: 300;
+  --fw-semi-bold: 400;
+  --fw-bold: 700;
+
+  --fs-200: 0.875rem;
+  --fs-300: 1rem;
+  --fs-400: 1.125rem;
+  --fs-500: 1.375rem;
+  --fs-600: 1.75rem;
+  --fs-700: 3.25rem;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+html {
+  color-scheme: dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--clr-primary-700);
+  color: var(--clr-neutral-100);
+  font-size: var(--fs-400);
+  font-family: var(--ff-base);
+  font-weight: var(--fw-regular);
+  line-height: 1.5;
+}
+
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
