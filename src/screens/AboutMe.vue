@@ -14,7 +14,8 @@
       I am working on a personal project involving React Native and Firebase, with the goal of releasing it on both the
       App Store and Play Store.
     </p>
-    <p></p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/hoangn" target="linkedin">Here</a></p>
+    <p>GitHub: <a href="https://github.com/mmxcrono" target="linkedin">Here</a></p>
   </div>
 </template>
 
