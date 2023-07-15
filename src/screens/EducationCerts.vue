@@ -5,10 +5,9 @@ const { educationCerts } = useEducationCertsStore();
 </script>
 
 <template>
-  <p class="eyebrow">Education & Certifications</p>
-  <h1 class="page-title">Computer Scientist</h1>
-
   <div class="education">
+    <p class="eyebrow">Education & Certifications</p>
+    <h1 class="page-title">Computer Scientist</h1>
     <div v-for="entry in educationCerts" :key="entry.name" class="education__entry">
       <p class="education__timeline">{{ entry.timeline }}</p>
       <div class="education__info">
@@ -26,9 +25,15 @@ const { educationCerts } = useEducationCertsStore();
 <style scoped lang="scss">
 @import '@/scss/mixins';
 .education {
-  margin-top: 2rem;
-  padding-right: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
   width: clamp(15rem, 100%, 50rem);
+  padding-right: 1rem;
+
+  @include breakpoint(md, max) {
+    padding-right: unset;
+  }
 }
 .education__entry {
   margin-bottom: 1rem;
@@ -49,4 +54,3 @@ const { educationCerts } = useEducationCertsStore();
   padding-left: 2rem;
 }
 </style>
-@/stores/educationCerts
