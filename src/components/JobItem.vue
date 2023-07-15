@@ -18,6 +18,9 @@ defineProps<{ job: Job }>();
     <ul class="job__items">
       <li v-for="item in job.lineItems" :key="`${item}`">{{ item }}</li>
     </ul>
+    <div class="job__skills">
+      <div class="job__skills__item" v-for="item in job.skills" :key="`${item}`">{{ item }}</div>
+    </div>
   </div>
 </template>
 
@@ -25,7 +28,7 @@ defineProps<{ job: Job }>();
 @import '@/scss/mixins';
 .job {
   background-color: var(--clr-primary-800);
-  width: 32rem;
+  width: clamp(32rem, 50vw, 40rem);
   padding: 1rem;
   position: relative;
   border-radius: 0.5rem;
@@ -51,8 +54,21 @@ defineProps<{ job: Job }>();
 }
 
 .job__items {
-  margin-top: 1rem;
+  margin-block: 2rem;
   list-style: circle;
   padding-left: 2rem;
+}
+
+.job__skills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+
+  &__item {
+    padding: 0.5em 1em;
+    margin: 0.5em 0.5em 0 0;
+    border-radius: 20px;
+    background-color: var(--clr-primary-700);
+  }
 }
 </style>

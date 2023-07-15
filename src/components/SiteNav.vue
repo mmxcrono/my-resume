@@ -9,8 +9,16 @@ const route = useRoute();
 
 const items: Item[] = [
   {
-    title: 'Resume',
+    title: 'About',
     path: '/',
+  },
+  {
+    title: 'Experience',
+    path: '/skills-experience',
+  },
+  {
+    title: 'Education',
+    path: '/education-certs',
   },
 ];
 
@@ -42,7 +50,7 @@ const onItemClick = (item: Item) => {
 <style lang="scss" scoped>
 @import '@/scss/mixins';
 
-$shadow: 0px 0px 16px var(--clr-secondary-400);
+$shadow: 0px 0px 16px var(--clr-accent-500);
 .navigation {
   border-left: 1px solid var(--clr-neutral-100);
   display: flex;
@@ -55,7 +63,6 @@ $shadow: 0px 0px 16px var(--clr-secondary-400);
   @include breakpoint(md, max) {
     border-left: none;
     border-top: 1px solid var(--clr-neutral-100);
-    margin-top: 2rem;
     margin-left: 0;
     flex-direction: row;
   }
@@ -83,13 +90,12 @@ $shadow: 0px 0px 16px var(--clr-secondary-400);
   }
 
   @include breakpoint(md, max) {
-    --_size: 1rem;
-    --_dot-width: calc(var(--_size) * 2);
+    --_size: 0.6rem;
+    --_dot-width: calc(var(--_size) * 3);
 
     border-radius: 30pt;
     width: var(--_dot-width);
-    height: 0.6rem;
-    aspect-ratio: unset;
+    height: var(--_size);
     transform: translateY(-50%);
     position: absolute;
     margin-right: 0;
@@ -100,9 +106,17 @@ $shadow: 0px 0px 16px var(--clr-secondary-400);
 
 .navigation__label {
   font-size: var(--fs-500);
+  text-transform: uppercase;
 
   &--active {
     text-shadow: $shadow;
+  }
+
+  @include breakpoint(md, max) {
+    font-size: var(--fs-400);
+    text-transform: lowercase;
+    padding-block: 1em;
+    margin-inline: 1em;
   }
 }
 </style>

@@ -1,17 +1,12 @@
 <script setup lang="ts">
 import JobItem from '@/components/JobItem.vue';
-import { userJobsStore } from '@/stores/jobs';
-const { jobs } = userJobsStore();
+import { useJobsStore } from '@/stores/jobs';
+const { jobs } = useJobsStore();
 </script>
 
 <template>
   <p class="eyebrow">Skills & Experience</p>
-  <h1 class="page-title">My Resume</h1>
-  <p class="intro">
-    I am senior Full Stack engineer with over 9 years of experience in the industry. His preferred stack for frontend
-    coding is either React or Vue in Typescript. For the backend Node.js + Express and using Docker containers for local
-    devlopment.
-  </p>
+  <h1 class="page-title">Full Stack Development</h1>
 
   <div class="job-experience">
     <JobItem v-for="job in jobs" :key="`${job.company}.${job.role}`" :job="job"></JobItem>
@@ -20,24 +15,6 @@ const { jobs } = userJobsStore();
 
 <style scoped lang="scss">
 @import '@/scss/mixins';
-.eyebrow {
-  color: var(--clr-secondary-400);
-  font-size: var(--fs-300);
-  font-weight: var(--fw-bold);
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  margin: 0;
-}
-.page-title {
-  font-size: var(--fs-700);
-  text-transform: uppercase;
-  margin: 0;
-}
-.intro {
-  font-size: var(--fs-500);
-  margin-block: 1rem;
-  max-width: 45ch;
-}
 .job-experience {
   display: grid;
   grid-auto-flow: column;

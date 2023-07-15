@@ -28,8 +28,8 @@ import SiteNav from '@/components/SiteNav.vue';
   @include breakpoint(md, max) {
     align-items: inherit;
 
-    grid-template-columns: unset;
-    grid-template-rows: auto 1fr;
+    grid-template-columns: inherit;
+    grid-template-rows: 1fr auto;
   }
 }
 
@@ -38,8 +38,7 @@ aside {
   align-self: stretch;
 
   @include breakpoint(md, max) {
-    grid-column: unset;
-    grid-row: 1;
+    grid-column: inherit;
   }
 }
 
@@ -48,9 +47,8 @@ main {
   width: calc(100vw - 15rem - 3vw);
 
   @include breakpoint(md, max) {
-    grid-column: unset;
+    grid-column: inherit;
     padding: 1rem;
-    grid-row: 2;
     width: 100%;
     overflow-x: hidden;
   }

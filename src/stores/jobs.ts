@@ -5,6 +5,7 @@ export interface Job {
   role: string;
   company: string;
   lineItems: string[];
+  skills: string[];
 }
 const jobs: Job[] = [
   {
@@ -20,7 +21,22 @@ const jobs: Job[] = [
       'Created and maintained unit and functional tests for frontend and backend code',
       'Created acceptance tests in JIRA + Zephyr for QA teams',
       'Supported Agile SCRUM and Kanban teams plan and refine sprints weekly',
-      'Performed ego-free constructive criticism in code reviews and peer reviews',
+      'Provided ego-free code reviews',
+    ],
+    skills: [
+      'Vue 3',
+      'SCSS',
+      'TypeScript',
+      'PHP',
+      'Symfony',
+      'REST API',
+      'MySQL',
+      'Docker',
+      'Microservices',
+      'Unit Tests',
+      'JIRA',
+      'Git',
+      'A/B Testing',
     ],
   },
   {
@@ -37,6 +53,7 @@ const jobs: Job[] = [
       'Trained and delegated daily with developers in multiple projects',
       'Performed all duties of full stack development',
     ],
+    skills: [],
   },
   {
     isCurrentRole: false,
@@ -50,10 +67,23 @@ const jobs: Job[] = [
       'Created Wordpress and Drupal custom themes, modules, and features',
       'Optimized MySQL queries to drastically improve performance',
     ],
+    skills: [],
+  },
+  {
+    isCurrentRole: false,
+    timeline: '2012 - 2014',
+    role: 'Support Software Analyst',
+    company: 'Evisions',
+    lineItems: [
+      'Handled 5-10 calls and web sessions daily to resolve issues',
+      'Modify code and check templates for over 50 universities world-wide',
+      'Perform baseline code upgrades in response to core software updates',
+    ],
+    skills: [],
   },
 ];
 
-export const userJobsStore = defineStore('jobs', {
+export const useJobsStore = defineStore('jobs', {
   state: () => ({
     jobs,
   }),
