@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import LinkedIn from '@/assets/linkedin.svg';
 import GitHub from '@/assets/github.svg';
+import FilePdf from '@/assets/file-pdf-solid.svg';
 </script>
 
 <template>
@@ -20,12 +21,21 @@ import GitHub from '@/assets/github.svg';
       App Store and Play Store.
     </p>
 
-    <section class="social-links">
-      <a href="https://linkedin.com/in/hoangn" target="linkedin" class="social-links__link"
-        ><component :is="LinkedIn" class="social-links__icon" /><span>LinkedIn</span></a
+    <section class="icon-links">
+      <a href="https://linkedin.com/in/hoangn" target="linkedin" class="icon-links__link"
+        ><component :is="LinkedIn" class="icon-links__icon" /><span>LinkedIn</span></a
       >
-      <a href="https://github.com/mmxcrono" target="github" class="social-links__link"
-        ><component :is="GitHub" class="social-links__icon" /><span>GitHub</span></a
+      <a href="https://github.com/mmxcrono" target="github" class="icon-links__link"
+        ><component :is="GitHub" class="icon-links__icon" /><span>GitHub</span></a
+      >
+    </section>
+
+    <section class="icon-links">
+      <a
+        href="https://www.dropbox.com/scl/fi/5bj388vnbws14cdsix5bw/Hoang_Nguyen_Resume_2023.pdf?rlkey=38zykw032pjv8ui43ml3eccsw&dl=0"
+        target="_blank"
+        class="icon-links__link"
+        ><component :is="FilePdf" class="icon-links__icon" /><span>Download Resume</span></a
       >
     </section>
   </div>
@@ -54,7 +64,7 @@ import GitHub from '@/assets/github.svg';
     font-size: var(--fs-500);
   }
 }
-.social-links {
+.icon-links {
   display: flex;
   flex-wrap: wrap;
 
