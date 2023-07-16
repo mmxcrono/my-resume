@@ -35,7 +35,7 @@ import FilePdf from '@/assets/file-pdf-solid.svg';
         href="https://www.dropbox.com/scl/fi/5bj388vnbws14cdsix5bw/Hoang_Nguyen_Resume_2023.pdf?rlkey=38zykw032pjv8ui43ml3eccsw&dl=0"
         target="_blank"
         class="icon-links__link"
-        ><component :is="FilePdf" class="icon-links__icon" /><span>Download Resume</span></a
+        ><component :is="FilePdf" class="icon-links__icon" /><span>Resume PDF</span></a
       >
     </section>
   </div>

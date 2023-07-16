@@ -110,7 +110,7 @@ const jobs: Job[] = [
       'Updated code and check templates for over 50 universities world-wide',
       'Performed baseline code upgrades in response to core software updates',
     ],
-    skills: ['Pro*C', 'Linux', 'Vi', 'Customer Service', 'Support'],
+    skills: ['Pro*C', 'Linux', 'Vim', 'Customer Service', 'Support'],
   },
 ];
 
