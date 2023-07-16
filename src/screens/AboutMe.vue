@@ -22,10 +22,10 @@ import GitHub from '@/assets/github.svg';
 
     <section class="social-links">
       <a href="https://linkedin.com/in/hoangn" target="linkedin" class="social-links__link"
-        ><LinkedIn alt="LinkedIn" class="social-links__icon" /><span>LinkedIn</span></a
+        ><component :is="LinkedIn" class="social-links__icon" /><span>LinkedIn</span></a
       >
       <a href="https://github.com/mmxcrono" target="github" class="social-links__link"
-        ><GitHub alt="GitHub" class="social-links__icon" /><span>GitHub</span></a
+        ><component :is="GitHub" class="social-links__icon" /><span>GitHub</span></a
       >
     </section>
   </div>
