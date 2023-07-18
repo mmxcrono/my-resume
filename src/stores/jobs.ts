@@ -17,7 +17,7 @@ const jobs: Job[] = [
       'Upgraded and customized browser extensions, transforming Chrome Manifest V2 from JS to V3 in TypeScript using Vite + Vue 3',
       'Developed backend REST API controllers, repositories, services, and data models using PHP',
       'Integrated with various third-party CRM and campaign systems through API and Webhooks',
-      'Implemented responsive Vue components with seamless integration to Google Analytics',
+      'Implemented responsive Vue components with seamless integration to Google Tag Manager',
       'Established and maintained comprehensive unit and functional tests for both frontend and backend code',
       'Executed acceptance tests in JIRA + Zephyr, collaborating closely with QA teams',
       'Contributed to Agile SCRUM and Kanban teams by assisting in sprint planning and refinement on a weekly basis',
@@ -39,6 +39,7 @@ const jobs: Job[] = [
       'JIRA',
       'Git',
       'A/B Testing',
+      'Google Tag Manager',
     ],
   },
   {
