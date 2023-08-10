@@ -68,8 +68,8 @@ const jobs: Job[] = [
       'MySQL',
       'Ionic',
       'Node.js + Express',
-      'JAVA',
-      'CentOS',
+      'Java',
+      'Linux',
     ],
   },
   {
@@ -87,6 +87,7 @@ const jobs: Job[] = [
     skills: [
       'Angular 2+',
       'React',
+      'React Native',
       'SCSS',
       'Material Design',
       'Drupal',
@@ -97,8 +98,8 @@ const jobs: Job[] = [
       'MySQL',
       'Ionic',
       'Express',
-      'JAVA',
-      'CentOS',
+      'Java',
+      'Linux',
     ],
   },
   {

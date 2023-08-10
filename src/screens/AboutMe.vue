@@ -32,7 +32,7 @@ import FilePdf from '@/assets/file-pdf-solid.svg';
 
     <section class="icon-links">
       <a
-        href="https://www.dropbox.com/scl/fi/5bj388vnbws14cdsix5bw/Hoang_Nguyen_Resume_2023.pdf?rlkey=38zykw032pjv8ui43ml3eccsw&dl=0"
+        href="https://www.dropbox.com/scl/fi/50frmyhnfw7icah4jyy0m/Hoang_Nguyen_Resume_2023.pdf?rlkey=vsrrynzh2twv4q3lzdw417pme&dl=0"
         target="_blank"
         class="icon-links__link"
         ><component :is="FilePdf" class="icon-links__icon" /><span>Resume PDF</span></a
