@@ -1,0 +1,7 @@
+{
+  "name": "my-resume",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue-vite"
+}
