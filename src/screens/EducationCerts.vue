@@ -7,7 +7,6 @@ const { educationCerts } = useEducationCertsStore();
 <template>
   <div class="education">
     <p class="eyebrow">Education & Certifications</p>
-    <h1 class="page-title">Computer Scientist</h1>
     <div v-for="entry in educationCerts" :key="entry.name" class="education__entry">
       <p class="education__timeline">{{ entry.timeline }}</p>
       <div class="education__info">
@@ -23,34 +22,38 @@ const { educationCerts } = useEducationCertsStore();
 </template>
 
 <style scoped lang="scss">
-@import '@/scss/mixins';
+@import '@/styles/mixins';
 .education {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  width: clamp(15rem, 100%, 50rem);
   padding-right: 1rem;
 
   @include breakpoint(md, max) {
     padding-right: unset;
   }
-}
-.education__entry {
-  margin-bottom: 1rem;
-  background-color: var(--clr-primary-800);
-  padding: 1rem;
-  border-radius: 0.5rem;
-}
 
-.education__info {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-.education__items {
-  margin-block: 1rem;
-  list-style: circle;
-  padding-left: 2rem;
+  &__entry {
+    margin-bottom: 1rem;
+    background-color: var(--clr-primary-800);
+    padding: 1rem;
+    border-radius: 0.5rem;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__items {
+    margin-block: 1rem;
+    list-style: circle;
+    padding-left: 2rem;
+  }
+  &__location {
+    text-align: right;
+  }
 }
 </style>

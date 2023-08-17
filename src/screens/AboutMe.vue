@@ -1,67 +1,81 @@
 <script setup lang="ts">
-import LinkedIn from '@/assets/linkedin.svg';
-import GitHub from '@/assets/github.svg';
-import FilePdf from '@/assets/file-pdf-solid.svg';
+import { useLinksStore } from '@/stores/links';
+const { socialLinks, preferredLinks, otherLinks, learningLinks } = useLinksStore();
 </script>
 
 <template>
   <div class="about-me">
     <p class="eyebrow">About Me</p>
-    <h1 class="page-title">Hoang Nguyen</h1>
-    <h2 class="about-me__seeking">Seeking new opportunities as a Senior Full Stack, Frontend, or Backend Engineer.</h2>
 
-    <p class="about-me__intro">
-      I am a senior full stack engineer with over 9 years of experience. My favorite technologies include React, Vue,
-      and Node.js. I enjoy working on both frontend and backend development, as well as hybrid mobile development.
-    </p>
-
-    <p class="about-me__current">
-      Currently, I am actively learning to use ChatGPT to enhance my coding skills and improve efficiency. Additionally,
-      I am working on a personal project involving React Native and Firebase, with the goal of releasing it on both the
-      App Store and Play Store.
-    </p>
-
-    <section class="icon-links">
-      <a href="https://linkedin.com/in/hoangn" target="linkedin" class="icon-links__link"
-        ><component :is="LinkedIn" class="icon-links__icon" /><span>LinkedIn</span></a
-      >
-      <a href="https://github.com/mmxcrono" target="github" class="icon-links__link"
-        ><component :is="GitHub" class="icon-links__icon" /><span>GitHub</span></a
-      >
-    </section>
-
+    <h2>Social Media</h2>
     <section class="icon-links">
       <a
-        href="https://www.dropbox.com/scl/fi/50frmyhnfw7icah4jyy0m/Hoang_Nguyen_Resume_2023.pdf?rlkey=vsrrynzh2twv4q3lzdw417pme&dl=0"
-        target="_blank"
+        v-for="item in socialLinks"
+        :key="item.label"
+        :href="item.href ?? '#'"
+        :target="item.target"
         class="icon-links__link"
-        ><component :is="FilePdf" class="icon-links__icon" /><span>Resume PDF</span></a
       >
+        <component :is="item.component" v-if="item.component" class="icon-links__icon" />
+        <span>{{ item.label }}</span>
+      </a>
+    </section>
+
+    <h2>Preferred Tech Stack</h2>
+    <section class="icon-links">
+      <a
+        v-for="item in preferredLinks"
+        :key="item.label"
+        :href="item.href ?? '#'"
+        :target="item.target"
+        class="icon-links__link"
+      >
+        <component :is="item.component" v-if="item.component" class="icon-links__icon" />
+        <span>{{ item.label }}</span>
+      </a>
+    </section>
+
+    <h2>Learning Next</h2>
+    <section class="icon-links">
+      <a
+        v-for="item in learningLinks"
+        :key="item.label"
+        :href="item.href ?? '#'"
+        :target="item.target"
+        class="icon-links__link"
+      >
+        <component :is="item.component" v-if="item.component" class="icon-links__icon" />
+        <span>{{ item.label }}</span>
+      </a>
+    </section>
+
+    <h2>Downloads and other links</h2>
+    <section class="icon-links">
+      <a
+        v-for="item in otherLinks"
+        :key="item.label"
+        :href="item.href ?? '#'"
+        :target="item.target"
+        class="icon-links__link"
+      >
+        <component :is="item.component" v-if="item.component" class="icon-links__icon" />
+        <span>{{ item.label }}</span>
+      </a>
     </section>
   </div>
 </template>
 
 <style scoped lang="scss">
-@import '@/scss/mixins';
+@import '@/styles/mixins';
 
 .about-me {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  width: clamp(15rem, 100%, 50rem);
-  padding-right: 1rem;
+  gap: 2em;
 
   &__seeking {
     font-size: var(--fs-500);
     color: var(--clr-accent-400);
-  }
-
-  &__intro {
-    font-size: var(--fs-500);
-  }
-
-  &__current {
-    font-size: var(--fs-500);
   }
 }
 .icon-links {
@@ -69,19 +83,23 @@ import FilePdf from '@/assets/file-pdf-solid.svg';
   flex-wrap: wrap;
 
   &__link {
+    color: var(--clr-neutral-900);
+    background-color: var(--clr-primary-800);
+
     display: flex;
     flex-direction: row;
     align-items: center;
-    background-color: var(--clr-primary-800);
     padding: 0.5em 1em;
     border-radius: 10pt;
     margin-right: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
+    text-decoration: none;
   }
+
   &__icon {
-    width: 2rem;
-    fill: var(--clr-neutral-100);
-    margin-right: 1rem;
+    width: 1.2rem;
+    fill: var(--clr-neutral-900);
+    margin-right: 0.5rem;
   }
 }
 </style>

@@ -1,0 +1,111 @@
+@import './reset';
+@import './mixins';
+
+:root {
+  --clr-primary-850: hsl(229 47% 17% / 0.8);
+  --clr-primary-800: hsl(229 47% 17% / 1);
+  --clr-primary-700: hsl(229 43% 20% / 1);
+  --clr-primary-400: hsl(230 50% 58% / 0.3);
+  --clr-primary-300: hsl(229 36% 39% / 1);
+  --clr-primary-200: hsl(229 21% 53% / 1);
+
+  --clr-secondary-400: hsl(229 78% 60% / 1);
+
+  --clr-accent-400: hsl(147 93% 43% / 1);
+  --clr-accent-500: hsl(147 83% 33% / 1);
+
+  --clr-neutral-900: hsl(0 0% 100% / 1);
+  --clr-neutral-500: hsl(0 0% 50% / 1);
+  --clr-neutral-100: hsl(0 0% 0% / 1);
+
+  --ff-base: 'Outfit', sans-serif;
+
+  --fw-regular: 300;
+  --fw-semi-bold: 400;
+  --fw-bold: 700;
+
+  --fs-base: 16px;
+  --fs-200: 0.875rem;
+  --fs-300: 1rem;
+  --fs-400: 1.125rem;
+  --fs-500: 1.375rem;
+  --fs-600: 1.75rem;
+  --fs-700: 3.25rem;
+
+  --glowing-shadow: 0px 0px 2px var(--clr-accent-500), 0px 0px 4px var(--clr-accent-500),
+    0px 0px 8px var(--clr-accent-500);
+}
+
+h1 {
+  font-size: var(--fs-700);
+}
+
+h2 {
+  font-size: var(--fs-600);
+}
+
+h3 {
+  font-size: var(--fs-500);
+}
+
+h4 {
+  font-size: var(--fs-400);
+}
+
+h5 {
+  font-size: var(--fs-300);
+}
+
+h6 {
+  font-size: var(--fs-200);
+}
+
+body {
+  background-color: var(--clr-primary-700);
+  color: var(--clr-neutral-900);
+  font-size: var(--fs-base);
+  font-family: var(--ff-base);
+  font-weight: var(--fw-regular);
+  line-height: 1.5;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+.eyebrow {
+  color: var(--clr-secondary-400);
+  font-size: var(--fs-200);
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+
+  @include breakpoint(md, min) {
+    font-size: var(--fs-300);
+  }
+}
+
+.page-title {
+  font-size: var(--fs-400);
+  text-transform: uppercase;
+  max-width: 50ch;
+  padding-right: 1rem;
+
+  @include breakpoint(md, min) {
+    font-size: var(--fs-600);
+  }
+}
+
+.material-icon {
+  width: 2rem;
+  fill: var(--clr-neutral-900);
+}
+
+input,
+textarea,
+select,
+button {
+  color: var(--clr-neutral-500);
+}

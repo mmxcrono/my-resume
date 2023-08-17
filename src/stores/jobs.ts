@@ -24,7 +24,7 @@ const jobs: Job[] = [
       'Provided valuable constructive criticism during code reviews and peer evaluations, fostering a collaborative and ego-free environment',
     ],
     skills: [
-      'Vue 3',
+      'Vue',
       'SCSS',
       'TypeScript',
       'PHP',

@@ -1,11 +1,17 @@
 <script setup lang="ts">
 import { useRoute, useRouter } from 'vue-router';
+import Menu from '@/assets/menu.svg';
+import MenuOpen from '@/assets/menu-open.svg';
+import { ref } from 'vue';
+
 interface Item {
   title: string;
   path: string;
 }
 const router = useRouter();
 const route = useRoute();
+
+const title = import.meta.env.VITE_APP_TITLE;
 
 const items: Item[] = [
   {
@@ -24,99 +30,89 @@ const items: Item[] = [
 
 const onItemClick = (item: Item) => {
   router.push(item.path);
+  closeMenu();
+};
+const isMenuOpen = ref<boolean>(false);
+
+const onMenuClick = () => {
+  isMenuOpen.value = !isMenuOpen.value;
+};
+
+const closeMenu = () => {
+  isMenuOpen.value = false;
 };
 </script>
 
 <template>
-  <nav class="navigation">
-    <div v-for="item in items" :key="item.path" class="navigation__item" @click="onItemClick(item)">
-      <div
-        class="navigation__dot"
-        :class="{
-          'navigation__dot--active': route.path === item.path,
-        }"
-      ></div>
-      <span
-        class="navigation__label"
-        :class="{
-          'navigation__label--active': route.path === item.path,
-        }"
-        >{{ item.title }}</span
-      >
+  <header class="header">
+    <div class="header__item">{{ title }}</div>
+    <div class="header__item">
+      <component :is="MenuOpen" v-if="isMenuOpen" class="material-icon" @click="onMenuClick" />
+      <component :is="Menu" v-else class="material-icon" @click="onMenuClick" />
     </div>
-  </nav>
+  </header>
+  <section v-show="isMenuOpen" class="nav-overlay" @click="closeMenu">
+    <nav class="navigation">
+      <div
+        v-for="item in items"
+        :key="item.path"
+        class="navigation__item"
+        :class="{
+          'navigation__item--active': route.path === item.path,
+        }"
+        @click="onItemClick(item)"
+      >
+        {{ item.title }}
+      </div>
+    </nav>
+  </section>
 </template>
 
 <style lang="scss" scoped>
-@import '@/scss/mixins';
+@import '@/styles/mixins';
 
-$shadow: 0px 0px 16px var(--clr-accent-500);
+/* $shadow: 0px 0px 16px var(--clr-accent-500); */
+.header {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding: 1em;
+}
+
+.material-icon {
+  cursor: pointer;
+}
+
+.nav-overlay {
+  background: var(--clr-primary-800);
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  padding-top: 3em;
+}
+
 .navigation {
-  border-left: 1px solid var(--clr-neutral-100);
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  margin-left: clamp(1rem, 10vw, 3rem);
-  height: 100%;
-  justify-content: center;
+  padding: 1em;
 
-  @include breakpoint(md, max) {
-    border-left: none;
-    border-top: 1px solid var(--clr-neutral-100);
-    margin-left: 0;
-    flex-direction: row;
-  }
-}
+  &__item {
+    cursor: pointer;
+    font-size: var(--fs-500);
+    text-transform: uppercase;
+    margin-bottom: 1em;
+    text-align: right;
 
-.navigation__item {
-  display: flex;
-  place-items: center;
-  cursor: pointer;
-  position: relative;
-}
-.navigation__dot {
-  --_size: 0.6rem;
+    &--active {
+      /* text-shadow: var(--glowing-shadow); */
+      text-decoration: underline;
+    }
 
-  content: '';
-  border-radius: 50%;
-  background-color: var(--clr-neutral-100);
-  width: var(--_size);
-  transform: translateX(-50%);
-  aspect-ratio: 1;
-  margin-right: 20px;
-
-  &--active {
-    box-shadow: $shadow;
-  }
-
-  @include breakpoint(md, max) {
-    --_size: 0.6rem;
-    --_dot-width: calc(var(--_size) * 3);
-
-    border-radius: 30pt;
-    width: var(--_dot-width);
-    height: var(--_size);
-    transform: translateY(-50%);
-    position: absolute;
-    margin-right: 0;
-    top: 0;
-    left: calc(50% - var(--_dot-width) / 2);
-  }
-}
-
-.navigation__label {
-  font-size: var(--fs-500);
-  text-transform: uppercase;
-
-  &--active {
-    text-shadow: $shadow;
-  }
-
-  @include breakpoint(md, max) {
-    font-size: var(--fs-400);
-    text-transform: lowercase;
-    padding-block: 1em;
-    margin-inline: 1em;
+    @include breakpoint(md, max) {
+      font-size: var(--fs-400);
+    }
   }
 }
 </style>

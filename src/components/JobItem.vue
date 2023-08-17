@@ -19,16 +19,15 @@ defineProps<{ job: Job }>();
       <li v-for="item in job.lineItems" :key="`${item}`">{{ item }}</li>
     </ul>
     <div class="job__skills">
-      <div class="job__skills__item" v-for="item in job.skills" :key="`${item}`">{{ item }}</div>
+      <div v-for="item in job.skills" :key="`${item}`" class="job__skills__item">{{ item }}</div>
     </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
-@import '@/scss/mixins';
+@import '@/styles/mixins';
 .job {
   background-color: var(--clr-primary-800);
-  width: clamp(32rem, 50vw, 40rem);
   padding: 1rem;
   position: relative;
   border-radius: 0.5rem;
@@ -41,34 +40,34 @@ defineProps<{ job: Job }>();
     left: 0;
   }
 
-  @include breakpoint(md, max) {
-    width: 90vw;
+  &__info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
-}
 
-.job__info {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
+  &__company {
+    text-align: right;
+  }
 
-.job__items {
-  margin-block: 2rem;
-  list-style: circle;
-  padding-left: 2rem;
-}
+  &__items {
+    margin-block: 2rem;
+    list-style: circle;
+    padding-left: 2rem;
+  }
 
-.job__skills {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+  &__skills {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 2rem;
 
-  &__item {
-    padding: 0.5em 1em;
-    margin: 0.5em 0.5em 0 0;
-    border-radius: 20px;
-    background-color: var(--clr-primary-700);
+    &__item {
+      padding: 0.5em 1em;
+      margin: 0.5em 0.5em 0 0;
+      border-radius: 20pt;
+      background-color: var(--clr-primary-700);
+    }
   }
 }
 </style>
