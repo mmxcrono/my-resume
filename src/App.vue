@@ -31,25 +31,6 @@ main {
   overflow: auto;
   padding: 1em;
 
-  /* Firefox scrollbar */
-  scrollbar-color: var(--clr-accent-400) var(--clr-primary-800);
-
-  &::-webkit-scrollbar {
-    height: 0.75rem;
-  }
-
-  &::-webkit-scrollbar-track {
-    background-color: var(--clr-primary-800);
-    border-radius: 20pt;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: var(--clr-accent-400);
-    border-radius: 20pt;
-  }
-
-  &::after {
-    content: '';
-  }
+  /* @include themed-scrollbar; */
 }
 </style>

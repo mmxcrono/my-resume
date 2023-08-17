@@ -27,7 +27,7 @@ defineProps<{ job: Job }>();
 <style lang="scss" scoped>
 @import '@/styles/mixins';
 .job {
-  background-color: var(--clr-primary-800);
+  background-color: var(--clr-surface-1);
   padding: 1rem;
   position: relative;
   border-radius: 0.5rem;
@@ -66,7 +66,7 @@ defineProps<{ job: Job }>();
       padding: 0.5em 1em;
       margin: 0.5em 0.5em 0 0;
       border-radius: 20pt;
-      background-color: var(--clr-primary-700);
+      background-color: var(--clr-button);
     }
   }
 }

@@ -35,7 +35,7 @@ const { educationCerts } = useEducationCertsStore();
 
   &__entry {
     margin-bottom: 1rem;
-    background-color: var(--clr-primary-800);
+    background-color: var(--clr-primary-700);
     padding: 1rem;
     border-radius: 0.5rem;
   }
@@ -51,6 +51,7 @@ const { educationCerts } = useEducationCertsStore();
     margin-block: 1rem;
     list-style: circle;
     padding-left: 2rem;
+    gap: 1em;
   }
   &__location {
     text-align: right;

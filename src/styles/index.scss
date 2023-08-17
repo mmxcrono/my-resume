@@ -2,22 +2,6 @@
 @import './mixins';
 
 :root {
-  --clr-primary-850: hsl(229 47% 17% / 0.8);
-  --clr-primary-800: hsl(229 47% 17% / 1);
-  --clr-primary-700: hsl(229 43% 20% / 1);
-  --clr-primary-400: hsl(230 50% 58% / 0.3);
-  --clr-primary-300: hsl(229 36% 39% / 1);
-  --clr-primary-200: hsl(229 21% 53% / 1);
-
-  --clr-secondary-400: hsl(229 78% 60% / 1);
-
-  --clr-accent-400: hsl(147 93% 43% / 1);
-  --clr-accent-500: hsl(147 83% 33% / 1);
-
-  --clr-neutral-900: hsl(0 0% 100% / 1);
-  --clr-neutral-500: hsl(0 0% 50% / 1);
-  --clr-neutral-100: hsl(0 0% 0% / 1);
-
   --ff-base: 'Outfit', sans-serif;
 
   --fw-regular: 300;
@@ -32,42 +16,65 @@
   --fs-600: 1.75rem;
   --fs-700: 3.25rem;
 
-  --glowing-shadow: 0px 0px 2px var(--clr-accent-500), 0px 0px 4px var(--clr-accent-500),
-    0px 0px 8px var(--clr-accent-500);
+  --clr-primary: #001060;
+  --clr-scheme: white;
+  --clr-scheme-inverse: black;
+
+  --clr-primary-100: color-mix(in oklab, var(--clr-primary), var(--clr-scheme) 10%);
+  --clr-primary-200: color-mix(in oklab, var(--clr-primary), var(--clr-scheme) 20%);
+  --clr-primary-300: color-mix(in oklab, var(--clr-primary), var(--clr-scheme) 30%);
+  --clr-primary-400: color-mix(in oklab, var(--clr-primary), var(--clr-scheme) 40%);
+  --clr-primary-500: color-mix(in oklab, var(--clr-primary), var(--clr-scheme) 50%);
+  --clr-primary-600: color-mix(in oklab, var(--clr-primary), var(--clr-scheme) 60%);
+  --clr-primary-700: color-mix(in oklab, var(--clr-primary), var(--clr-scheme) 70%);
+  --clr-primary-800: color-mix(in oklab, var(--clr-primary), var(--clr-scheme) 80%);
+  --clr-primary-900: color-mix(in oklab, var(--clr-primary), var(--clr-scheme) 90%);
+
+  --clr-secondary: #08d463;
+  --clr-secondary-100: color-mix(in oklab, var(--clr-secondary), var(--clr-scheme) 10%);
+  --clr-secondary-200: color-mix(in oklab, var(--clr-secondary), var(--clr-scheme) 20%);
+  --clr-secondary-300: color-mix(in oklab, var(--clr-secondary), var(--clr-scheme) 30%);
+  --clr-secondary-400: color-mix(in oklab, var(--clr-secondary), var(--clr-scheme) 40%);
+  --clr-secondary-500: color-mix(in oklab, var(--clr-secondary), var(--clr-scheme) 50%);
+  --clr-secondary-600: color-mix(in oklab, var(--clr-secondary), var(--clr-scheme) 60%);
+  --clr-secondary-700: color-mix(in oklab, var(--clr-secondary), var(--clr-scheme) 70%);
+  --clr-secondary-800: color-mix(in oklab, var(--clr-secondary), var(--clr-scheme) 80%);
+  --clr-secondary-900: color-mix(in oklab, var(--clr-secondary), var(--clr-scheme) 90%);
+
+  --clr-neutral-100: color-mix(in oklab, var(--clr-scheme-inverse), var(--clr-scheme) 10%);
+  --clr-neutral-200: color-mix(in oklab, var(--clr-scheme-inverse), var(--clr-scheme) 20%);
+  --clr-neutral-300: color-mix(in oklab, var(--clr-scheme-inverse), var(--clr-scheme) 30%);
+  --clr-neutral-400: color-mix(in oklab, var(--clr-scheme-inverse), var(--clr-scheme) 40%);
+  --clr-neutral-500: color-mix(in oklab, var(--clr-scheme-inverse), var(--clr-scheme) 50%);
+  --clr-neutral-600: color-mix(in oklab, var(--clr-scheme-inverse), var(--clr-scheme) 60%);
+  --clr-neutral-700: color-mix(in oklab, var(--clr-scheme-inverse), var(--clr-scheme) 70%);
+  --clr-neutral-800: color-mix(in oklab, var(--clr-scheme-inverse), var(--clr-scheme) 80%);
+  --clr-neutral-900: color-mix(in oklab, var(--clr-scheme-inverse), var(--clr-scheme) 90%);
+
+  --clr-text: var(--clr-scheme-inverse);
+
+  --clr-surface-0: var(--clr-primary-400);
+  --clr-surface-1: var(--clr-primary-600);
+  --clr-surface-2: var(--clr-primary-800);
+
+  --clr-button: var(--clr-primary-900);
 }
 
-h1 {
-  font-size: var(--fs-700);
-}
-
-h2 {
-  font-size: var(--fs-600);
-}
-
-h3 {
-  font-size: var(--fs-500);
-}
-
-h4 {
-  font-size: var(--fs-400);
-}
-
-h5 {
-  font-size: var(--fs-300);
-}
-
-h6 {
-  font-size: var(--fs-200);
+@media (prefers-color-scheme: dark) {
+  :root {
+    --clr-scheme: black;
+    --clr-scheme-inverse: white;
+  }
 }
 
 body {
-  background-color: var(--clr-primary-700);
-  color: var(--clr-neutral-900);
+  background-color: var(--clr-surface-0);
+  color: var(--clr-text);
   font-size: var(--fs-base);
   font-family: var(--ff-base);
   font-weight: var(--fw-regular);
-  line-height: 1.5;
 
+  line-height: 1.5;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -76,12 +83,11 @@ body {
 }
 
 .eyebrow {
-  color: var(--clr-secondary-400);
   font-size: var(--fs-200);
   font-weight: var(--fw-bold);
+  color: var(--clr-secondary-200);
   text-transform: uppercase;
   letter-spacing: 0.2em;
-
   @include breakpoint(md, min) {
     font-size: var(--fs-300);
   }
@@ -100,7 +106,7 @@ body {
 
 .material-icon {
   width: 2rem;
-  fill: var(--clr-neutral-900);
+  fill: var(--clr-neutral-100);
 }
 
 input,

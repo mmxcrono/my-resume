@@ -71,7 +71,6 @@ const closeMenu = () => {
 <style lang="scss" scoped>
 @import '@/styles/mixins';
 
-/* $shadow: 0px 0px 16px var(--clr-accent-500); */
 .header {
   display: flex;
   justify-content: space-between;
@@ -84,7 +83,7 @@ const closeMenu = () => {
 }
 
 .nav-overlay {
-  background: var(--clr-primary-800);
+  background: var(--clr-primary-200);
   position: absolute;
   inset: 0;
   z-index: 1;
@@ -106,12 +105,7 @@ const closeMenu = () => {
     text-align: right;
 
     &--active {
-      /* text-shadow: var(--glowing-shadow); */
       text-decoration: underline;
-    }
-
-    @include breakpoint(md, max) {
-      font-size: var(--fs-400);
     }
   }
 }
