@@ -1,20 +1,17 @@
 <script setup lang="ts">
-import { useRoute, useRouter } from 'vue-router';
 import { ref } from 'vue';
 import { StatusBar } from '@capacitor/status-bar';
 
 import Menu from '@/assets/menu.svg';
 import MenuOpen from '@/assets/menu-open.svg';
+import { useNavigationStore } from '@/stores/navigation';
+import { storeToRefs } from 'pinia';
 
-interface Item {
-  title: string;
-  path: string;
-}
-const router = useRouter();
-const route = useRoute();
+const navStore = useNavigationStore();
+const { toggleMenu } = navStore;
+const { isMenuOpen } = storeToRefs(navStore);
 
 const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
-
 const isDark = ref<boolean>(prefersDark.matches);
 
 const updateTheme = () => {
@@ -32,35 +29,6 @@ const toggleDark = () => {
 };
 
 const title = import.meta.env.VITE_APP_TITLE;
-
-const items: Item[] = [
-  {
-    title: 'About',
-    path: '/',
-  },
-  {
-    title: 'Experience',
-    path: '/skills-experience',
-  },
-  {
-    title: 'Education',
-    path: '/education-certs',
-  },
-];
-
-const onItemClick = (item: Item) => {
-  router.push(item.path);
-  closeMenu();
-};
-const isMenuOpen = ref<boolean>(false);
-
-const onMenuClick = () => {
-  isMenuOpen.value = !isMenuOpen.value;
-};
-
-const closeMenu = () => {
-  isMenuOpen.value = false;
-};
 </script>
 
 <template>
@@ -72,25 +40,10 @@ const closeMenu = () => {
         <span v-if="isDark">🌙</span>
         <span v-else>🌞</span>
       </button>
-      <component :is="MenuOpen" v-if="isMenuOpen" class="material-icon" @click="onMenuClick" />
-      <component :is="Menu" v-else class="material-icon" @click="onMenuClick" />
+      <component :is="MenuOpen" v-if="isMenuOpen" class="material-icon" @click="toggleMenu" />
+      <component :is="Menu" v-else class="material-icon" @click="toggleMenu" />
     </div>
   </header>
-  <section v-show="isMenuOpen" class="nav-overlay" @click="closeMenu">
-    <nav class="navigation">
-      <div
-        v-for="item in items"
-        :key="item.path"
-        class="navigation__item"
-        :class="{
-          'navigation__item--active': route.path === item.path,
-        }"
-        @click="onItemClick(item)"
-      >
-        {{ item.title }}
-      </div>
-    </nav>
-  </section>
 </template>
 
 <style lang="scss" scoped>
@@ -102,6 +55,11 @@ const closeMenu = () => {
   position: relative;
   padding: 1em;
   background-color: var(--clr-surface-1);
+  width: 100%;
+
+  position: fixed;
+  top: 0;
+  z-index: 2;
 
   &__item {
     display: flex;
@@ -111,33 +69,5 @@ const closeMenu = () => {
 
 .material-icon {
   cursor: pointer;
-}
-
-.nav-overlay {
-  background: var(--clr-overlay);
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  padding-top: 3em;
-}
-
-.navigation {
-  display: flex;
-  flex-direction: column;
-  padding: 1em;
-
-  &__item {
-    cursor: pointer;
-    font-size: var(--fs-500);
-    text-transform: uppercase;
-    margin-bottom: 1em;
-    text-align: right;
-
-    &--active {
-      text-decoration: underline;
-    }
-  }
 }
 </style>

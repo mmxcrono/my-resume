@@ -1,11 +1,13 @@
 <script setup lang="ts">
 import SiteNav from '@/components/SiteNav.vue';
+import NavMenu from './components/NavMenu.vue';
 </script>
 
 <template>
   <div class="wrapper">
-    <SiteNav />
     <main>
+      <SiteNav />
+      <NavMenu />
       <router-view />
     </main>
   </div>
@@ -13,15 +15,8 @@ import SiteNav from '@/components/SiteNav.vue';
 
 <style lang="scss" scoped>
 @import '@/styles/mixins';
-.wrapper {
+main {
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  overflow: hidden;
-}
-main {
-  flex: 1;
-  overflow: auto;
-  padding: 1em;
 }
 </style>

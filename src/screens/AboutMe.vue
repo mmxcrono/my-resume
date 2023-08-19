@@ -213,6 +213,7 @@ const name = import.meta.env.VITE_FULL_NAME;
   display: flex;
   flex-direction: column;
   gap: 1em;
+  padding: 1em;
 
   &__items {
     padding-left: 2em;
