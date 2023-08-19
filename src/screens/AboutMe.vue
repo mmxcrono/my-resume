@@ -202,8 +202,8 @@ const learningLinks: Link[] = [
   flex-wrap: wrap;
 
   &__link {
+    background-color: var(--clr-button);
     color: var(--clr-button-text);
-    background-color: var(--clr-surface-1);
 
     display: flex;
     flex-direction: row;

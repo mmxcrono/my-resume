@@ -1,12 +1,5 @@
 <script setup lang="ts">
 import SiteNav from '@/components/SiteNav.vue';
-import { StatusBar } from '@capacitor/status-bar';
-
-// Display content under transparent status bar (Android only)
-// StatusBar.setOverlaysWebView({ overlay: false });
-StatusBar.setBackgroundColor({
-  color: '#1d2549',
-});
 </script>
 
 <template>
@@ -30,7 +23,5 @@ main {
   flex: 1;
   overflow: auto;
   padding: 1em;
-
-  /* @include themed-scrollbar; */
 }
 </style>

@@ -1,104 +1,6 @@
 @import './reset';
 @import './mixins';
-
-:root {
-  --ff-base: 'Outfit', sans-serif;
-
-  --fw-regular: 300;
-  --fw-semi-bold: 400;
-  --fw-bold: 700;
-
-  --fs-base: 16px;
-  --fs-200: 0.875rem;
-  --fs-300: 1rem;
-  --fs-400: 1.125rem;
-  --fs-500: 1.375rem;
-  --fs-600: 1.75rem;
-  --fs-700: 3.25rem;
-
-  --clr-scheme-inverse: black;
-  --clr-scheme: white;
-
-  --clr-primary-100: hsl(230, 70%, 90%);
-  --clr-primary-200: hsl(230, 70%, 85%);
-  --clr-primary-300: hsl(230, 70%, 80%);
-  --clr-primary-400: hsl(230, 70%, 75%);
-  --clr-primary-500: hsl(230, 70%, 30%);
-  --clr-primary-600: hsl(230, 70%, 25%);
-  --clr-primary-700: hsl(230, 70%, 20%);
-  --clr-primary-800: hsl(230, 70%, 15%);
-  --clr-primary-900: hsl(230, 70%, 10%);
-
-  --clr-secondary-100: hsl(147, 70%, 90%);
-  --clr-secondary-200: hsl(147, 70%, 85%);
-  --clr-secondary-300: hsl(147, 70%, 80%);
-  --clr-secondary-400: hsl(147, 70%, 75%);
-  --clr-secondary-500: hsl(147, 70%, 30%);
-  --clr-secondary-600: hsl(147, 70%, 25%);
-  --clr-secondary-700: hsl(147, 70%, 20%);
-  --clr-secondary-800: hsl(147, 70%, 15%);
-  --clr-secondary-900: hsl(147, 70%, 10%);
-
-  --clr-neutral-100: hsl(310, 5%, 90%);
-  --clr-neutral-200: hsl(310, 5%, 85%);
-  --clr-neutral-300: hsl(310, 5%, 80%);
-  --clr-neutral-400: hsl(310, 5%, 75%);
-  --clr-neutral-500: hsl(310, 5%, 30%);
-  --clr-neutral-600: hsl(310, 5%, 25%);
-  --clr-neutral-700: hsl(310, 5%, 20%);
-  --clr-neutral-800: hsl(310, 5%, 15%);
-  --clr-neutral-900: hsl(310, 5%, 10%);
-
-  --clr-text: var(--clr-scheme-inverse);
-
-  --clr-surface-0: var(--clr-primary-300);
-  --clr-surface-1: var(--clr-primary-200);
-  --clr-surface-2: var(--clr-primary-100);
-
-  --clr-button: var(--clr-primary-400);
-  --clr-button-text: var(--clr-scheme-inverse);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --clr-scheme: black;
-    --clr-scheme-inverse: white;
-
-    --clr-surface-0: var(--clr-primary-400);
-    --clr-surface-1: var(--clr-primary-200);
-    --clr-surface-2: var(--clr-primary-100);
-
-    --clr-primary-100: hsl(230, 70%, 10%);
-    --clr-primary-200: hsl(230, 70%, 15%);
-    --clr-primary-300: hsl(230, 70%, 20%);
-    --clr-primary-400: hsl(230, 70%, 25%);
-    --clr-primary-500: hsl(230, 70%, 30%);
-    --clr-primary-600: hsl(230, 70%, 75%);
-    --clr-primary-700: hsl(230, 70%, 80%);
-    --clr-primary-800: hsl(230, 70%, 85%);
-    --clr-primary-900: hsl(230, 70%, 90%);
-
-    --clr-secondary-100: hsl(147, 70%, 10%);
-    --clr-secondary-200: hsl(147, 70%, 15%);
-    --clr-secondary-300: hsl(147, 70%, 20%);
-    --clr-secondary-400: hsl(147, 70%, 25%);
-    --clr-secondary-500: hsl(147, 70%, 30%);
-    --clr-secondary-600: hsl(147, 70%, 75%);
-    --clr-secondary-700: hsl(147, 70%, 80%);
-    --clr-secondary-800: hsl(147, 70%, 85%);
-    --clr-secondary-900: hsl(147, 70%, 90%);
-
-    --clr-neutral-100: hsl(310, 5%, 10%);
-    --clr-neutral-200: hsl(310, 5%, 15%);
-    --clr-neutral-300: hsl(310, 5%, 20%);
-    --clr-neutral-400: hsl(310, 5%, 25%);
-    --clr-neutral-500: hsl(310, 5%, 30%);
-    --clr-neutral-600: hsl(310, 5%, 75%);
-    --clr-neutral-700: hsl(310, 5%, 80%);
-    --clr-neutral-800: hsl(310, 5%, 85%);
-    --clr-neutral-900: hsl(310, 5%, 90%);
-  }
-}
+@import './theme';
 
 body {
   background-color: var(--clr-surface-0);
@@ -118,12 +20,9 @@ body {
 .eyebrow {
   font-size: var(--fs-200);
   font-weight: var(--fw-bold);
-  color: var(--clr-secondary-800);
+  color: var(--clr-secondary-700);
   text-transform: uppercase;
   letter-spacing: 0.2em;
-  @include breakpoint(md, min) {
-    font-size: var(--fs-300);
-  }
 }
 
 .page-title {
@@ -131,10 +30,6 @@ body {
   text-transform: uppercase;
   max-width: 50ch;
   padding-right: 1rem;
-
-  @include breakpoint(md, min) {
-    font-size: var(--fs-600);
-  }
 }
 
 .material-icon {

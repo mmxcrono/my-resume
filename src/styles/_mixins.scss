@@ -56,24 +56,3 @@ $breakpoints: (
     }
   }
 }
-
-@mixin themed-scrollbar {
-  --scrollbar-track: var(--clr-secondary-500);
-  --scrollbar-thumb: var(--clr-secondary-100);
-
-  scrollbar-color: var(--scrollbar-track) var(--scrollbar-thumb);
-
-  &::-webkit-scrollbar {
-    height: 0.75rem;
-  }
-
-  &::-webkit-scrollbar-track {
-    background-color: var(--scrollbar-track);
-    border-radius: 20pt;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: var(--scrollbar-thumb);
-    border-radius: 20pt;
-  }
-}
