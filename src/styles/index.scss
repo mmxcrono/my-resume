@@ -20,7 +20,7 @@ body {
 .eyebrow {
   font-size: var(--fs-200);
   font-weight: var(--fw-bold);
-  color: var(--clr-secondary-700);
+  color: var(--clr-accent-heading);
   text-transform: uppercase;
   letter-spacing: 0.2em;
 }
@@ -41,5 +41,5 @@ input,
 textarea,
 select,
 button {
-  color: var(--clr-neutral-500);
+  color: var(--clr-text);
 }

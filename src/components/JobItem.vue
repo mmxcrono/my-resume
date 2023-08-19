@@ -35,7 +35,7 @@ defineProps<{ job: Job }>();
   &--current::after {
     content: 'Current role';
     position: absolute;
-    color: var(--clr-accent-400);
+    color: var(--clr-accent-heading);
     top: -2rem;
     left: 0;
   }
@@ -67,7 +67,6 @@ defineProps<{ job: Job }>();
       margin: 0.5em 0.5em 0 0;
       border-radius: 20pt;
       background-color: var(--clr-button);
-      color: var(--clr-button-text);
     }
   }
 }

@@ -203,7 +203,6 @@ const learningLinks: Link[] = [
 
   &__link {
     background-color: var(--clr-button);
-    color: var(--clr-button-text);
 
     display: flex;
     flex-direction: row;
@@ -217,7 +216,7 @@ const learningLinks: Link[] = [
 
   &__icon {
     width: 1.2rem;
-    fill: var(--clr-button-text);
+    fill: var(--clr-text);
     margin-right: 0.5rem;
   }
 }

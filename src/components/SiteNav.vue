@@ -114,7 +114,7 @@ const closeMenu = () => {
 }
 
 .nav-overlay {
-  background: var(--clr-primary-200);
+  background: var(--clr-overlay);
   position: absolute;
   inset: 0;
   z-index: 1;

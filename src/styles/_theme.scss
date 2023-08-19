@@ -54,13 +54,16 @@ body {
 
   --clr-surface-0: var(--clr-neutral-100);
   --clr-surface-1: var(--clr-neutral-200);
-  --clr-surface-2: var(--clr-neutral-300);
 
-  --clr-button: var(--clr-secondary-200);
-  --clr-button-text: var(--clr-scheme-inverse);
+  --clr-button: var(--clr-primary-300);
+  --clr-button-text: var(--clr-text);
+
+  --clr-overlay: var(--clr-primary-200);
+  --clr-accent-heading: var(--clr-secondary-700);
 }
 
 body.dark {
+  // Would be better to use color-mix but didn't work with ionic
   --clr-scheme: black;
   --clr-scheme-inverse: white;
 
@@ -93,6 +96,4 @@ body.dark {
   --clr-neutral-700: hsl(36, 5%, 80%);
   --clr-neutral-800: hsl(36, 5%, 85%);
   --clr-neutral-900: hsl(36, 5%, 90%);
-
-  --clr-button: var(--clr-primary-300);
 }
