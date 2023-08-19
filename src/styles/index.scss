@@ -16,54 +16,56 @@
   --fs-600: 1.75rem;
   --fs-700: 3.25rem;
 
-  --clr-primary: #001060;
   --clr-scheme: white;
   --clr-scheme-inverse: black;
 
-  --clr-primary-100: color-mix(in oklab, var(--clr-primary), var(--clr-scheme) 10%);
-  --clr-primary-200: color-mix(in oklab, var(--clr-primary), var(--clr-scheme) 20%);
-  --clr-primary-300: color-mix(in oklab, var(--clr-primary), var(--clr-scheme) 30%);
-  --clr-primary-400: color-mix(in oklab, var(--clr-primary), var(--clr-scheme) 40%);
-  --clr-primary-500: color-mix(in oklab, var(--clr-primary), var(--clr-scheme) 50%);
-  --clr-primary-600: color-mix(in oklab, var(--clr-primary), var(--clr-scheme) 60%);
-  --clr-primary-700: color-mix(in oklab, var(--clr-primary), var(--clr-scheme) 70%);
-  --clr-primary-800: color-mix(in oklab, var(--clr-primary), var(--clr-scheme) 80%);
-  --clr-primary-900: color-mix(in oklab, var(--clr-primary), var(--clr-scheme) 90%);
+  --clr-primary-100: hsl(230, 70%, 10%);
+  --clr-primary-200: hsl(230, 70%, 15%);
+  --clr-primary-300: hsl(230, 70%, 20%);
+  --clr-primary-400: hsl(230, 70%, 25%);
+  --clr-primary-500: hsl(230, 70%, 30%);
+  --clr-primary-600: hsl(230, 70%, 75%);
+  --clr-primary-700: hsl(230, 70%, 80%);
+  --clr-primary-800: hsl(230, 70%, 85%);
+  --clr-primary-900: hsl(230, 70%, 90%);
 
-  --clr-secondary: #08d463;
-  --clr-secondary-100: color-mix(in oklab, var(--clr-secondary), var(--clr-scheme) 10%);
-  --clr-secondary-200: color-mix(in oklab, var(--clr-secondary), var(--clr-scheme) 20%);
-  --clr-secondary-300: color-mix(in oklab, var(--clr-secondary), var(--clr-scheme) 30%);
-  --clr-secondary-400: color-mix(in oklab, var(--clr-secondary), var(--clr-scheme) 40%);
-  --clr-secondary-500: color-mix(in oklab, var(--clr-secondary), var(--clr-scheme) 50%);
-  --clr-secondary-600: color-mix(in oklab, var(--clr-secondary), var(--clr-scheme) 60%);
-  --clr-secondary-700: color-mix(in oklab, var(--clr-secondary), var(--clr-scheme) 70%);
-  --clr-secondary-800: color-mix(in oklab, var(--clr-secondary), var(--clr-scheme) 80%);
-  --clr-secondary-900: color-mix(in oklab, var(--clr-secondary), var(--clr-scheme) 90%);
+  --clr-secondary-100: hsl(147, 70%, 10%);
+  --clr-secondary-200: hsl(147, 70%, 15%);
+  --clr-secondary-300: hsl(147, 70%, 20%);
+  --clr-secondary-400: hsl(147, 70%, 25%);
+  --clr-secondary-500: hsl(147, 70%, 30%);
+  --clr-secondary-600: hsl(147, 70%, 75%);
+  --clr-secondary-700: hsl(147, 70%, 80%);
+  --clr-secondary-800: hsl(147, 70%, 85%);
+  --clr-secondary-900: hsl(147, 70%, 90%);
 
-  --clr-neutral-100: color-mix(in oklab, var(--clr-scheme-inverse), var(--clr-scheme) 10%);
-  --clr-neutral-200: color-mix(in oklab, var(--clr-scheme-inverse), var(--clr-scheme) 20%);
-  --clr-neutral-300: color-mix(in oklab, var(--clr-scheme-inverse), var(--clr-scheme) 30%);
-  --clr-neutral-400: color-mix(in oklab, var(--clr-scheme-inverse), var(--clr-scheme) 40%);
-  --clr-neutral-500: color-mix(in oklab, var(--clr-scheme-inverse), var(--clr-scheme) 50%);
-  --clr-neutral-600: color-mix(in oklab, var(--clr-scheme-inverse), var(--clr-scheme) 60%);
-  --clr-neutral-700: color-mix(in oklab, var(--clr-scheme-inverse), var(--clr-scheme) 70%);
-  --clr-neutral-800: color-mix(in oklab, var(--clr-scheme-inverse), var(--clr-scheme) 80%);
-  --clr-neutral-900: color-mix(in oklab, var(--clr-scheme-inverse), var(--clr-scheme) 90%);
+  --clr-neutral-100: hsl(310, 5%, 10%);
+  --clr-neutral-200: hsl(310, 5%, 15%);
+  --clr-neutral-300: hsl(310, 5%, 20%);
+  --clr-neutral-400: hsl(310, 5%, 25%);
+  --clr-neutral-500: hsl(310, 5%, 30%);
+  --clr-neutral-600: hsl(310, 5%, 75%);
+  --clr-neutral-700: hsl(310, 5%, 80%);
+  --clr-neutral-800: hsl(310, 5%, 85%);
+  --clr-neutral-900: hsl(310, 5%, 90%);
 
   --clr-text: var(--clr-scheme-inverse);
 
-  --clr-surface-0: var(--clr-primary-400);
-  --clr-surface-1: var(--clr-primary-600);
-  --clr-surface-2: var(--clr-primary-800);
+  --clr-surface-0: var(--clr-primary-600);
+  --clr-surface-1: var(--clr-primary-800);
+  --clr-surface-2: var(--clr-primary-900);
 
-  --clr-button: var(--clr-primary-900);
+  --clr-button: var(--clr-primary-400);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --clr-scheme: black;
     --clr-scheme-inverse: white;
+
+    --clr-surface-0: var(--clr-primary-400);
+    --clr-surface-1: var(--clr-primary-200);
+    --clr-surface-2: var(--clr-primary-100);
   }
 }
 
