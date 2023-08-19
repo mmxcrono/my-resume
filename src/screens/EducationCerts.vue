@@ -35,7 +35,7 @@ const { educationCerts } = useEducationCertsStore();
 
   &__entry {
     margin-bottom: 1rem;
-    background-color: var(--clr-primary-700);
+    background-color: var(--clr-surface-1);
     padding: 1rem;
     border-radius: 0.5rem;
   }

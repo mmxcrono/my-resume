@@ -67,6 +67,7 @@ defineProps<{ job: Job }>();
       margin: 0.5em 0.5em 0 0;
       border-radius: 20pt;
       background-color: var(--clr-button);
+      color: var(--clr-button-text);
     }
   }
 }
