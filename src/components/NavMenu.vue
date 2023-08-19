@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { useNavigationStore } from '@/stores/navigation';
 import { storeToRefs } from 'pinia';
 import { useRoute, useRouter } from 'vue-router';
+
+import { useNavigationStore } from '@/stores/navigation';
 
 interface Item {
   title: string;
@@ -54,6 +55,7 @@ const overlayClick = () => {
     </nav>
   </section>
 </template>
+
 <style scoped lang="scss">
 .nav-overlay {
   background: var(--clr-overlay);

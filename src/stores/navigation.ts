@@ -7,8 +7,6 @@ export const useNavigationStore = defineStore('navigation', {
   actions: {
     toggleMenu() {
       this.isMenuOpen = !this.isMenuOpen;
-
-      console.log('set menu to ' + this.isMenuOpen);
     },
   },
 });
