@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { useRoute, useRouter } from 'vue-router';
+import { ref } from 'vue';
+import { StatusBar } from '@capacitor/status-bar';
+
 import Menu from '@/assets/menu.svg';
 import MenuOpen from '@/assets/menu-open.svg';
-import { ref } from 'vue';
-
-import { StatusBar } from '@capacitor/status-bar';
 
 interface Item {
   title: string;
@@ -69,7 +69,7 @@ const closeMenu = () => {
 
     <div class="header__item">
       <button @click="toggleDark">
-        <span v-if="isDark">🌑</span>
+        <span v-if="isDark">🌙</span>
         <span v-else>🌞</span>
       </button>
       <component :is="MenuOpen" v-if="isMenuOpen" class="material-icon" @click="onMenuClick" />

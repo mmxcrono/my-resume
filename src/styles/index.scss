@@ -22,14 +22,13 @@ body {
   font-weight: var(--fw-bold);
   color: var(--clr-accent-heading);
   text-transform: uppercase;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.1em;
+  margin-block: 1em;
 }
 
 .page-title {
   font-size: var(--fs-400);
-  text-transform: uppercase;
-  max-width: 50ch;
-  padding-right: 1rem;
+  margin-block: 1em;
 }
 
 .material-icon {

@@ -6,7 +6,7 @@ const { educationCerts } = useEducationCertsStore();
 
 <template>
   <div class="education">
-    <p class="eyebrow">Education & Certifications</p>
+    <h1 class="eyebrow">Education & Certifications</h1>
     <div v-for="entry in educationCerts" :key="entry.name" class="education__entry">
       <p class="education__timeline">{{ entry.timeline }}</p>
       <div class="education__info">

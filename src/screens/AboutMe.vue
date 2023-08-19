@@ -9,6 +9,7 @@ import Docker from '@/assets/docker.svg';
 import Kubernetes from '@/assets/kubernetes.svg';
 import Brain from '@/assets/brain.svg';
 import RubyRails from '@/assets/language-ruby-on-rails.svg';
+import ExternalLink from '@/components/ExternalLink.vue';
 
 interface Link {
   label: string;
@@ -65,7 +66,7 @@ const preferredLinks: Link[] = [
     label: 'Typescript',
   },
   {
-    label: 'SASS/SCSS',
+    label: 'SASS',
   },
   {
     href: 'https://storybook.js.org/',
@@ -125,27 +126,29 @@ const learningLinks: Link[] = [
     label: 'Ionic Capacitor',
   },
 ];
+
+const name = import.meta.env.VITE_FULL_NAME;
 </script>
 
 <template>
   <div class="about-me">
-    <p class="eyebrow">About Me</p>
+    <h1 class="page-title eyebrow">About {{ name }}</h1>
 
-    <h2>Social Media</h2>
-    <section class="icon-links">
-      <a
-        v-for="item in socialLinks"
-        :key="item.label"
-        :href="item.href ?? '#'"
-        :target="item.target"
-        class="icon-links__link"
-      >
-        <component :is="item.component" v-if="item.component" class="icon-links__icon" />
-        <span>{{ item.label }}</span>
-      </a>
-    </section>
+    <ul class="about-me__items">
+      <li>✅ Full Stack Engineer for over 9 years</li>
+      <li>
+        ✅ Received B.S. in Computer Science in 2012 from
+        <ExternalLink href="https://www.cpp.edu/" label="Cal Poly Pomona" />
+      </li>
+      <li>✅ US Citizen</li>
+      <li>
+        ✅ Currently working on code samples and frontend
+        <ExternalLink href="https://www.frontendmentor.io/profile/mmxcrono" label="challenges" for portfolio /> to
+        showcase
+      </li>
+    </ul>
 
-    <h2>Preferred Tech Stack</h2>
+    <h2 class="eyebrow">Preferred Tech Stack</h2>
     <section class="icon-links">
       <a
         v-for="item in preferredLinks"
@@ -159,7 +162,7 @@ const learningLinks: Link[] = [
       </a>
     </section>
 
-    <h2>Learning Next</h2>
+    <h2 class="eyebrow">Learning Next</h2>
     <section class="icon-links">
       <a
         v-for="item in learningLinks"
@@ -173,7 +176,21 @@ const learningLinks: Link[] = [
       </a>
     </section>
 
-    <h2>Downloads and other links</h2>
+    <h2 class="eyebrow">Social Media</h2>
+    <section class="icon-links">
+      <a
+        v-for="item in socialLinks"
+        :key="item.label"
+        :href="item.href ?? '#'"
+        :target="item.target"
+        class="icon-links__link"
+      >
+        <component :is="item.component" v-if="item.component" class="icon-links__icon" />
+        <span>{{ item.label }}</span>
+      </a>
+    </section>
+
+    <h2 class="eyebrow">Downloads and other links</h2>
     <section class="icon-links">
       <a
         v-for="item in otherLinks"
@@ -195,8 +212,14 @@ const learningLinks: Link[] = [
 .about-me {
   display: flex;
   flex-direction: column;
-  gap: 2em;
+  gap: 1em;
+
+  &__items {
+    padding-left: 2em;
+    text-indent: -2em;
+  }
 }
+
 .icon-links {
   display: flex;
   flex-wrap: wrap;

@@ -5,7 +5,7 @@ const { jobs } = useJobsStore();
 </script>
 
 <template>
-  <p class="eyebrow">Skills & Experience</p>
+  <h1 class="eyebrow">Skills & Experience</h1>
 
   <div class="jobs">
     <JobItem v-for="job in jobs" :key="`${job.company}.${job.role}`" :job="job"></JobItem>
