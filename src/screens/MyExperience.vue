@@ -79,8 +79,8 @@ const smartSkills = [
             <strong>Vite, Vue, Storybook, Typescript, and SCSS</strong>
           </li>
           <li>
-            Worked closely with the design team through <strong>Figma</strong> designs and
-            <strong>Zoom</strong> meetings
+            Worked closely with the design team on <strong>50+ Figma</strong> designs and
+            <strong>30+ A/B Tests</strong>
           </li>
           <li>
             Developed <strong>REST API</strong> controllers, services, repositories, and data models in
@@ -174,7 +174,8 @@ const smartSkills = [
 
 <style scoped lang="scss">
 .my-experience {
-  padding: 1em;
+  padding-block: 4em;
+  padding-inline: 1em;
 }
 .jobs {
   display: flex;
