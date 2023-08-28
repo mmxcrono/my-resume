@@ -94,7 +94,7 @@ const preferredLinks: Link[] = [
 
 const otherLinks: Link[] = [
   {
-    href: 'https://www.dropbox.com/scl/fi/50frmyhnfw7icah2jyy0m/Hoang_Nguyen_Resume_2023.pdf?rlkey=vsrrynzh2twv4q3lzdw417pme&dl=0',
+    href: 'https://www.dropbox.com/scl/fi/50frmyhnfw7icah4jyy0m/Hoang_Nguyen_Resume_2023.pdf?rlkey=vsrrynzh2twv4q3lzdw417pme&dl=0',
     target: '_blank',
     component: FilePdf,
     label: 'Resume',
