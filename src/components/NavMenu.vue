@@ -2,12 +2,7 @@
 import { storeToRefs } from 'pinia';
 import { useRoute, useRouter } from 'vue-router';
 
-import { useNavigationStore } from '@/stores/navigation';
-
-interface Item {
-  title: string;
-  path: string;
-}
+import { NavItem, useNavigationStore, navItems } from '@/stores/navigation';
 
 const navStore = useNavigationStore();
 const { toggleMenu } = navStore;
@@ -16,24 +11,11 @@ const { isMenuOpen } = storeToRefs(navStore);
 const router = useRouter();
 const route = useRoute();
 
-const name = import.meta.env.VITE_FULL_NAME;
-
-const items: Item[] = [
-  {
-    title: name,
-    path: '/',
-  },
-  {
-    title: 'Experience',
-    path: '/my-experience',
-  },
-];
-const onItemClick = (item: Item) => {
+const onItemClick = (item: NavItem) => {
   router.push(item.path);
 };
 
 const overlayClick = () => {
-  console.log('overlay click');
   toggleMenu();
 };
 </script>
@@ -42,7 +24,7 @@ const overlayClick = () => {
   <section v-show="isMenuOpen" class="nav-overlay" @click="overlayClick">
     <nav class="navigation">
       <div
-        v-for="item in items"
+        v-for="item in navItems"
         :key="item.path"
         class="navigation__item"
         :class="{

@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import SiteNav from '@/components/SiteNav.vue';
+import TopHeader from '@/components/TopHeader.vue';
 import NavMenu from './components/NavMenu.vue';
 </script>
 
 <template>
   <div class="wrapper">
     <main>
-      <SiteNav />
+      <TopHeader />
       <NavMenu />
       <router-view />
     </main>
