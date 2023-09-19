@@ -8,7 +8,7 @@ import Nodejs from '@/assets/nodejs.svg';
 import Docker from '@/assets/docker.svg';
 import Kubernetes from '@/assets/kubernetes.svg';
 import Brain from '@/assets/brain.svg';
-import RubyRails from '@/assets/language-ruby-on-rails.svg';
+import Laravel from '@/assets/laravel.svg';
 import ExternalLink from '@/components/ExternalLink.vue';
 
 interface Link {
@@ -94,7 +94,7 @@ const preferredLinks: Link[] = [
 
 const otherLinks: Link[] = [
   {
-    href: 'https://www.dropbox.com/scl/fi/50frmyhnfw7icah2jyy0m/Hoang_Nguyen_Resume_2023.pdf?rlkey=vsrrynzh2twv4q3lzdw417pme&dl=0',
+    href: 'resume.pdf',
     target: '_blank',
     component: FilePdf,
     label: 'Resume',
@@ -115,15 +115,10 @@ const learningLinks: Link[] = [
     label: 'ChatGPT',
   },
   {
-    href: 'https://rubyonrails.org/',
-    target: 'ruby-on-rails',
-    component: RubyRails,
-    label: 'Ruby on Rails',
-  },
-  {
-    href: 'https://capacitorjs.com/',
-    target: 'capacitor',
-    label: 'Ionic Capacitor',
+    href: 'https://laravel.com/',
+    target: 'laravel',
+    component: Laravel,
+    label: 'Laravel 10',
   },
 ];
 
@@ -141,11 +136,7 @@ const name = import.meta.env.VITE_FULL_NAME;
         <ExternalLink href="https://www.cpp.edu/" label="Cal Poly Pomona" />
       </li>
       <li>✅ US Citizen</li>
-      <li>
-        ✅ Currently working on code samples and frontend
-        <ExternalLink href="https://www.frontendmentor.io/profile/mmxcrono" label="challenges" for portfolio /> to
-        showcase
-      </li>
+      <li>✅ Currently working on code samples and learning new technologies</li>
     </ul>
 
     <h2 class="eyebrow">Preferred Tech Stack</h2>
@@ -162,7 +153,7 @@ const name = import.meta.env.VITE_FULL_NAME;
       </a>
     </section>
 
-    <h2 class="eyebrow">Learning Next</h2>
+    <h2 class="eyebrow">Learning</h2>
     <section class="icon-links">
       <a
         v-for="item in learningLinks"
